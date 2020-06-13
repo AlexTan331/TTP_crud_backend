@@ -8,17 +8,17 @@ router.get("/", async (req, res, next) => {
   // try to get campuses object from database
   try {
     // campuses will be the result of the Campus.findAll promise
-    const campuses = await Campus.findAll({ include: Student });
+    const students = await Student.findAll({ include: Campus });
     // if campuses is valid, it will be sent as a json response
-    console.log(campuses);
-    res.status(200).json(campuses);
+    console.log(students);
+    res.status(200).json(students);
   } catch (err) {
     // if there is an error, it'll passed via the next parameter to the error handler middleware
     next(err);
   }
 });
 
-// Route to serve single campus based on its id
+/* // Route to serve single campus based on its id
 // /api/campuses/:id
 // /api/campuses/456 would respond with a campus with id 456
 router.get("/:id", async (req, res, next) => {
@@ -134,6 +134,6 @@ router.delete("/:id", async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-});
+}); */
 
 module.exports = router;
