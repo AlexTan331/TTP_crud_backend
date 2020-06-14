@@ -10,8 +10,9 @@ const Student = db.define("student", {
     defaultValue: "https://via.placeholder.com/480x240?text=Placeholder",
   },
   gpa: {
-    type: Sequelize.FLOAT,
-    allowNull: false,
+    type: Sequelize.DECIMAL(3,2),
+    min: 0.00,
+    max: 4.00,
   },
   campusId: { type: Sequelize.INTEGER, allowNull: true },
 });
