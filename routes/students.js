@@ -69,13 +69,14 @@ router.put("/:id", async (req, res, next) => {
   // get the id from request params
   const { id } = req.params;
   // get form data from the request body
-  const { firstName,lastName, email, imageUrl, gpa } = req.body;
+  const { firstName,lastName, email, imageUrl, gpa, campusId } = req.body;
   const updatedObj = {
     firstName: firstName,
     lastName: lastName,
     email :email,
     imageUrl: imageUrl,
     gpa: gpa,
+    campusId: campusId,
   };
   try {
     // if successfull:
@@ -97,6 +98,7 @@ router.put("/:id", async (req, res, next) => {
     next(err);
   }
 });
+
 
 // Route to handle removing a student
 router.delete("/:id", async (req, res, next) => {
