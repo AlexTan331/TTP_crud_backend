@@ -22,6 +22,8 @@ const seedDatabase = async () => {
     Student.create({ firstName: "Tony", lastName: "Parker", email: "tonyparker@example.com", gpa: 3.60, campusId: 2 }),
     Student.create({ firstName: "Megan", lastName: "White", email: "meganwhite@example.com", gpa: 3.69, campusId: 2 }),
     Student.create({ firstName: "Carter", lastName: "James", email: "carterjames@example.com", gpa: 4.00, campusId: 3 }),
+    Student.create({ firstName: "Taylor", lastName: "May", email: "taylormay@example.com", gpa: 4.00, campusId: 1 }),
+    
   ]);
 };
 
